@@ -23,3 +23,21 @@ console.log(ten)
 // 상수 정의 (수정불가)
 // 1. const 2.초기값 필수
 const twoHundred = 200
+
+// 출력함수
+// 1. console.log (출력할 자료)
+console.log("sup")
+// 2. alert (출력할 자료)
+alert("wsp")
+// 3. document(html문서), query(질의), Selector(선택자), inner(마크업 사이에 있는 본문)HTML
+document.querySelector("p1").innerHTML = "JS에서 대입한 값"
+
+
+//입력함수
+// 1. confirm(출력 메시지) YES OR NO
+let feeling = confirm("u good?")
+console.log("u good: " + feeling)
+
+// 2. prompt
+let user_prompt = prompt("type anything")
+console.log("what you typed: " + user_prompt)
