@@ -29,7 +29,7 @@ const twoHundred = 200
 console.log("sup")
 // 2. alert (출력할 자료)
 alert("wsp")
-// 3. document(html문서), query(질의), Selector(선택자), inner(마크업 사이에 있는 본문)HTML
+// 3. document(html문서), query(질의), Selector(선택자), inner(마크업 사이에 있는)HTML
 document.querySelector("p1").innerHTML = "JS에서 대입한 값"
 
 
