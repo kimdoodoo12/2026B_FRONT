@@ -25,6 +25,13 @@ else if (id_number[6] == '2' || id_number == '4') console.log("red")
 // 10,000원 이상 30,000원 미만: 1% 할인
 // 10,000원 미만: 할인 없음
 
+let money = Number(prompt("구매 금액"))
+if (money >= 50000) console.log(money*9/10)
+else if (money >= 30000 && money < 50000) console.log(money*95/100)
+else if (money >= 10000 && money < 30000) console.log(money*99/100)
+else console.log(`할인없음; ${money}`)
+
+
 
 // 문제 4: 월(Month)에 따른 계절 판별
 // 1부터 12 사이의 월(Month)을 숫자로 입력받아, 해당하는 계절을 출력하는 프로그램을 작성하시오.
@@ -34,8 +41,28 @@ else if (id_number[6] == '2' || id_number == '4') console.log("red")
 // 겨울: 12, 1, 2월
 // 만약 1~12 이외의 숫자를 입력하면 '잘못된 월입니다.'를 출력하세요.
 
+let month = Number(prompt("1부터 12사이의 월을 입력"))
+if (month >= 3 && month <= 5) console.log("봄")
+else if (month >= 6 && month <= 8) console.log("여름")
+else if (month >= 9 && month <= 11) console.log("가을")
+else if (month == 1 || month == 2 || month == 12) console.log("겨울")
+else console.log("잘못된 월입니다")
+
+
+
 // 문제 5: 세 수 중 가장 큰 수 찾기
 // 서로 다른 세 개의 정수를 입력받아, 가장 큰 수를 출력하는 프로그램을 작성하시오.
+
+let num = prompt("서로 다른 세 개의 정수를 입력").split(" ").map(Number)
+let result
+if (num[0] > num[1]) result = num[0]
+else result = num[1]
+
+if (result > num[2]) result = result
+else result = num[2]
+
+console.log(result)
+
 
 // 문제 6: 윤년 판별기
 // 사용자로부터 연도(year)를 입력받아 해당 연도가 윤년인지 평년인지 판별하는 프로그램을 작성하시오.
@@ -44,9 +71,31 @@ else if (id_number[6] == '2' || id_number == '4') console.log("red")
 // 또는 연도가 400의 배수일 때
 // 출력 예시: '2024년은 윤년입니다.' 또는 '2023년은 평년입니다.'
 
+let year = Number(prompt("연도 입력"))
+if (year % 4 == 0 && year % 100 != 0) console.log(`${year}은 윤년입니다`)
+else console.log(`${year}은 평년입니다`)
+
+
+
 // 문제 7: 세 수 오름차순 정렬
 // 서로 다른 세 개의 정수를 입력받아, 오름차순(작은 수부터 큰 수 순서)으로 정렬하여 출력하는 프로그램을 작성하시오.
 // 예시: 17, 4, 8 입력 시 4, 8, 17 출력
+
+let Num = prompt("서로 다른 세개의 정수").split(" ").map(Number)
+if (Num[0] < Num[1] && Num[1] < Num[2]) console.log(Num[0], Num[1], Num[2])
+else if (Num[0] < Num[2] && Num[2] < Num[1]) console.log(Num[0], Num[2], Num[1])
+else if (Num[1] < Num[0] && Num[0] < Num[2]) console.log(Num[1], Num[0], Num[2])
+else if (Num[1] < Num[2] && Num[2] < Num[0]) console.log(Num[1], Num[2], Num[0])
+else if (Num[2] < Num[0] && Num[0] < Num[1]) console.log(Num[2], Num[0], Num[1])
+else if (Num[2] < Num[1] && Num[1] < Num[2]) console.log(Num[2], Num[1], Num[0])
+// 0 1 2
+// 0 2 1
+// 1 0 2
+// 1 2 0
+// 2 0 1
+// 2 1 0
+
+
 
 // 문제 8: 가위바위보 게임
 // 두 명의 플레이어가 참여하는 가위바위보 게임을 만드시오.
@@ -60,11 +109,39 @@ else if (id_number[6] == '2' || id_number == '4') console.log("red")
 // 플레이어 2가 이기면 '플레이어2 승리'를 출력합니다.
 // 두 플레이어가 같은 것을 내면 '무승부'를 출력합니다.
 
+// 0 1
+// 0 2 플레이어 1 승리
+// 1 0 플레이어 1 승리
+// 1 2
+// 2 0
+// 2 1 플레이어 1 승리
+
+let hand1 = Number(prompt("플레이어1: 0(가위), 1(바위), 2(보) 중 하나의 숫자를 입력"))
+let hand2 = Number(prompt("플레이어2: 0(가위), 1(바위), 2(보) 중 하나의 숫자를 입력"))
+
+if (hand1 == hand2) console.log("무승부")
+else if (hand1 == 0 && hand2 == 2) console.log("플레이어1 승리")
+else if (hand1 == 1 && hand2 == 0) console.log("플레이어1 승리")
+else if (hand1 == 2 && hand2 == 1) console.log("플레이어1 승리")
+else console.log("플레이어 2승리")
+
+
+
 // 문제 9: 주차 차량 위치 검색
 // 주차장 차량 정보가 다음과 같이 두 개의 배열로 관리되고 있습니다. 두 배열에서 같은 인덱스는 동일한 차량의 정보를 의미합니다.
 // 차량 번호 목록: let carArray = [ '250어7142', '142가7415', '888호8888' ];
 // 주차 위치 목록: let locationArray = [ 'A1', 'B3', 'C2' ];
 // 사용자로부터 차량 번호를 입력받아, carArray에서 해당 차량을 찾은 뒤 locationArray에 있는 그 차량의 주차 위치를 찾아 출력하는 프로그램을 작성하시오. 만약 해당하는 차량 번호가 없다면 '차량이 존재하지 않습니다.'를 출력하시오.
+
+let carArray = [ '250어7142', '142가7415', '888호8888' ];
+let locationArray= [ 'A1', 'B3', 'C2' ];
+let search = prompt("차량번호 입력 '250어7142', '142가7415', '888호8888'")
+
+if (carArray[0] == '250어7142') console.log(locationArray[0])
+else if (carArray[1] == '142가7415') console.log(locationArray[1])
+else if (carArray[2] == '888호8888') console.log(locationArray[2])
+else console.log("차량이 존재하지 않습니다")
+
 
 // 문제 10: 수강 신청 목록에서 과목 제외하기
 // 현재 수강 신청한 과목 목록이 배열로 주어져 있습니다.
@@ -72,5 +149,12 @@ else if (id_number[6] == '2' || id_number == '4') console.log("red")
 // 사용자로부터 제외하고 싶은 과목명을 입력받아, courseList에 해당 과목이 존재하면 목록에서 삭제한 뒤 변경된 배열 전체를 출력하세요. 만약 존재하지 않는 과목이면 '해당 과목은 신청 목록에 없습니다.'를 출력하는 프로그램을 작성하시오.
 // 과제 제출
 
+let courseList = ['수학', '영어', '과학', '국어'];
+let subject = prompt("'수학', '영어', '과학', '국어' 중 제외하고 싶은 과목 입력")
+if (courseList.includes(subject)){
+    courseList = courseList.filter(word => word !== subject)
+    console.log(courseList)
+}
+else console.log("해당 과목은 신청 목록에 없습니다")
 
 // © 2026 아이티단자

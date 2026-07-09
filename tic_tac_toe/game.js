@@ -4,16 +4,22 @@ let count = 1
 let shape ="O"
 let arr = new Array(8)
 
+// 테이블로부터 각 id와 숫자를 매개변수로 받음
 function table_click_function(id, number){
 
 
 
-    // 게임 진행
+    // count가 짝수면 Player O의 차례
+    // count가 홀수면 Player X의 차례
     if (count % 2 == 1) shape = "O"
     else if (count % 2 == 0) shape = "X"
+
+    // 각 player의 차례에 맞는 shape로 변경
     document.getElementById(id).innerHTML = shape
+    // 틱택토 배열에 삽입
     arr[number] = shape
     console.log(arr)
+    // 테이블 값을 넣으면 다음턴을 위한 count 증가
     count++
 
     // 게임 끝나는 조건
