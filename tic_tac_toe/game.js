@@ -2,7 +2,6 @@
 
 let count = 1
 let shape ="O"
-let max_size = 8
 let arr = new Array(8)
 
 function table_click_function(id, number){
@@ -18,9 +17,9 @@ function table_click_function(id, number){
     count++
 
     // 게임 끝나는 조건
-    // 1. 보드가 꽉찼을 때
-    if (arr.length)
-    // 2. 이기는 경우의 수가 "O" 또는 "x" 중 하나라도 나왔을 때
+
+
+    // 1. 이기는 경우의 수가 "O" 또는 "x" 중 하나라도 나왔을 때
 
     if (arr[0] == "X" && arr[1] == "X" && arr[2] == "X") alert("player X 승리")
     else if (arr[3] == "X" && arr[4] == "X" && arr[5] == "X") alert("player X 승리")
@@ -41,4 +40,7 @@ function table_click_function(id, number){
     else if (arr[0] == "O" && arr[4] == "O" && arr[8] == "O") alert("player O 승리")
     else if (arr[2] == "O" && arr[4] == "O" && arr[6] == "O") alert("player O 승리")
     else if (arr[3] == "O" && arr[4] == "O" && arr[5] == "O") alert("player O 승리")
+
+    // 2. 보드가 꽉찼을 때 무승부
+    else if (count == 10) alert("무승부")
     }
