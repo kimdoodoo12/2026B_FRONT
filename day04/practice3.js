@@ -48,7 +48,7 @@ else if (month >= 9 && month <= 11) console.log("가을")
 else if (month == 1 || month == 2 || month == 12) console.log("겨울")
 else console.log("잘못된 월입니다")
 
-
+    
 
 // 문제 5: 세 수 중 가장 큰 수 찾기
 // 서로 다른 세 개의 정수를 입력받아, 가장 큰 수를 출력하는 프로그램을 작성하시오.
