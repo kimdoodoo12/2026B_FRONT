@@ -70,18 +70,15 @@ let numbers = [1, 5, 2, 3, 5, 1, 4, 2];
 
 let numbers = [1, 5, 2, 3, 5, 1, 4, 2];
 let answer = [];
-// 1. 첫번째 
+// 1. answer에 해당 요소가 없을 때만 push로 추가
+// 2. answer에 첫번째 요소부터 중복되는지 indexOf()로 검사하기
+// 3. 
+
 for (i in numbers){
-    answer.push(numbers[i])
-    console.log(answer)
-    for (j in numbers){
-        numbers.indexOf()
-    }
+    if (answer.indexOf(numbers[i]) == -1)
+        answer.push(numbers[i])
 }
-
-console.log(numbers)
-
-
+console.log(answer)
 
 
 
@@ -90,10 +87,41 @@ console.log(numbers)
 let numbers = [5, 3, 4, 1, 2];
 힌트: 중첩 for 반복문을 사용하며, 이웃한 두 요소를 비교하 위치를 바꿉니다.*/
 
+let numberS = [5, 3, 4, 1, 2];
+let temp
+for (i=0; i <5; i++){
+    for (j=0; j < 4; j++){
+        if (numberS[j] > numberS[j+1]){
+            temp = numberS[j]
+            numberS[j] = numberS[j+1]
+            numberS[j+1] = temp
+        } else continue
+    }
+}
+console.log(numberS)
+
+
 /*문제 7: 재고 관리 시스템
 두 개의 배열 products(상품 목록)와 stock(재고 수량)이 있습니다. 사용자로부터 구매할 상품명과 수량을 입력받아, 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요. 재고가 부족하면 "재고가 부족합니다."를 출력합니다.
 let products = ['볼펜', '노트', '지우개'];
 let stock = [10, 5, 20];*/
+
+let products = ['볼펜', '노트', '지우개'];
+let stock = [10, 5, 20];
+
+let user_product = prompt("상품명 ex) 볼펜, 노트, 지우개")
+
+for (i in products){
+    if (products[i] == user_product){
+        if (stock[i] > 0){
+            console.log("구매완료")
+            stock[i] -= 1
+        } else {console.log("재고가 부족합니다")}
+    }else continue
+}
+
+
+
 
 /*문제 8: 영화 평점 시각화하기
 주어진 영화 이름과 평점 배열을 이용하여, 각 영화의 평점을 별(★)로 시각화하여 HTML에 출력하는 프로그램을 작성하시오.
@@ -114,9 +142,31 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 
 */
 
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
+let movieRatings = [8, 4, 7, 6];
+
+for (i in movieNames){
+
+    document.querySelector("p1").innerHTML += movieNames[i]
+    for(j=0; j<movieRatings[i]; j++){
+        document.querySelector("p1").innerHTML += "★"
+    }
+    for(k=0; k< 10 - movieRatings[i]; k++){
+        document.querySelector("p1").innerHTML += "☆"
+    }
+
+    document.querySelector("p1").innerHTML += "<br/>"
+}
+
+
+
+
+
+
+
 /*문제 9: 좌석 예약 상태 표시하기
 총 6개의 좌석 상태 정보가 담긴 배열을 이용하여, 좌석 배치도와 상태를 HTML에 출력하는 프로그램을 작성하시오.
-(1). 초기 데이터
+(1). 초기 데    이터
 좌석의 상태는 '빈좌석' 또는 '예약석'으로 구성됩니다.
 let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석'];
 (2). 구현 조건
@@ -132,6 +182,32 @@ for 반복문을 사용하여 6개의 좌석을 모두 출력합니다.
 예약석 빈좌석
 
 */
+
+
+let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석'];
+let color = ' ';
+
+
+for (i in seatStatus){
+    
+    if (seatStatus[i] == '빈좌석') {color = 'blue'}
+    else if (seatStatus[i] == '예약석') {color = 'red'}
+
+
+    if ((Number(i)+1) % 2 == 1){
+        document.querySelector("p2").innerHTML += `<span style="color:${color}">${seatStatus[i]}</span> `
+    }
+
+
+    else {
+        document.querySelector("p2").innerHTML += `<span style="color:${color}">${seatStatus[i]}</span> `
+        document.querySelector("p2").innerHTML += "<br/>"
+    }
+}
+
+
+
+
 
 // 문제 10: 주차 요금 정산하기
 // 차량별 주차 시간 데이터가 주어졌을 때, 아래의 요금 규정에 따라 각 차량이 지불해야 할 최종 주차 요금을 계산하여 HTML에 출력하는 프로그램을 작성하시오.
