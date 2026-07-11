@@ -236,7 +236,11 @@ for (i in carNumbers){
         document.querySelector("p3").innerHTML += `${carNumbers[i]}: ${usageMinutes[i]}분 주차, 최종요금: ${totalFee}원`
         document.querySelector("p3").innerHTML += `<br/>`
     }
-    else {totalFee = 0}
+    else {
+        totalFee = 0
+        document.querySelector("p3").innerHTML += `${carNumbers[i]}: ${usageMinutes[i]}분 주차, 최종요금: ${totalFee}원`
+        document.querySelector("p3").innerHTML += `<br/>`
+    }
 }
 
 // (4). 출력 예시 (HTML)
