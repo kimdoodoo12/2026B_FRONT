@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='exam1.css'>
+
+    <style>
+        h3{ color: blue;}
+        #two{columns: black;}
+    </style>
+</head>
+<body>
+    CSS: Cascading(종속하는) Style Sheet <br />
+    CSS 적용방법 1: 인라인 마크업 내 style 속성 이용 <br />
+    CSS 적용방법 2: head 마크업 내 style 마크업 뭄법 <br />
+    CSS 적용방법 3: .css 파일 내 css문법 작성하고 head 마크업에서 호출 <br />
+
+    <h2 style="color: red;"> CSS 방법 1 </h3>
+
+    <h3> CSS 방법 2</h3>
+    <h4 id="two"> CSS 방법 2</h4>
+    <h4 id="three"> CSS 방법 3 </h4>
+    <h5> CSS 선택자</h5>
+    <h6 class="area1"> CSS 선택자</h6>
+    <h6 id="area2">CSS 선택자</h6>
+
+    <div class="div1">
+        div 기준 상위 요소는 body, 하위요소는 p
+        <p>학생명단</p>
+        <ol>
+            <li id="name1"> <h1>유재석</h1></li>
+            <li id="name2">강호동</li>
+        </ol>
+    </div>
+
+    <h2> CSS 텍스트 주요 속성</h2>
+    <h1 class="title"> 강아지</h1>
+    <div class="content">
+        개는 중형 동물이자 가장 널리 분포하며 개체 수가 가장 많은 지상 동물 중
+        하나이며 가축화된 회색늑대이다. 개는 인류가 최초로 가축으로 삼은 동물로
+        알려져 있으며, 역사적으로 반려견, 사냥견으로서 길러 왔다
+    </div>
+    <p class="author">위키백과</p>
+    <script src="exam1.js"></script>
+</body>
+</html>

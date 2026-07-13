@@ -1,0 +1,65 @@
+#three {color: yellowgreen;}
+
+/* 주석처리 */
+
+/* 
+선택자 종류
+1. * : 와일드카드(전체)
+2. h4 : 특정마크업명
+3. .className : 특정 클래스명 지정 (복수 가능)
+4. #id : 특정 아이디명 지정 (단일)
+
+선택자 우선순위
+동일한 속성이 중복되면 * < 특정 마크업 < .className < #id < html 마크업 내 인라인 CSS 
+동일한 수준의 속성이 중복되면 가장 아래의 것이 적용
+*/
+
+
+*{color: brown;}
+h5{color: aqua;}
+.area1{color: blueviolet;}
+#area2{color: tomato;}
+
+/* 자식선택자는 상위 선택자 > 자식선택자
+자손선택자는 상위 선택자 자손선택자
+*/
+div > p {color: green;}
+div h1{background-color: aqua;}
+#name2 {background-color: aquamarine;}
+
+.title {
+    font-family: "궁서";
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+/* 웹폰트: 눈누/구글폰트 홈페이지에서 웹폰트 코드 복붙*/
+
+@supports (font-variation-settings: "wght" 450) {
+    * {
+      font-family: 'Markazi Text';
+      font-weight: 450;
+    }
+  }
+
+.content {
+    font-family: 'Markazi Text';
+    word-spacing: 10px; /* 단어간격 */
+    letter-spacing: 1px; /* 글자간격 */
+    line-height: 150%; /* 줄간격 */
+}
+
+.author {
+    text-align: center; /* 텍스트 정렬 */
+    text-decoration: underline;
+    /* underline: 밑줄, overline: 윗줄 line-through: 중간줄 */
+    text-shadow: 10px -10px 3px blue;
+    /* x축 y축 흐림정도 색상 */
+    /* 색상 표현방법 */
+    color : green;
+    color : rgb(0, 255, 0); /* red green blue */
+    color : rgb (0, 255, 0, 0.8); /* 투명도 */
+    color: #008000; /* 헥스코드 */
+}

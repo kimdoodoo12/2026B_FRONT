@@ -6,7 +6,7 @@ let numbeRs = [23, 5, 67, 12, 88, 34];
 max = 0;
 for (i=0; i<numbeRs.length; i++){
     if (numbeRs[i] > max)
-        max = numbeRs[i]
+        max = numbeRs[i]    
 }
 console.log(max)
 
