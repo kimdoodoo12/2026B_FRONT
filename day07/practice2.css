@@ -1,0 +1,21 @@
+.book1 {
+    width: 50%;
+}
+
+.index1, .index2 {
+    color: orange;
+    font-size: 40px;
+    padding-right: 10px;
+}
+
+.block1 {
+    margin: 30px;
+}
+
+.description1{
+    background-color: darkcyan;
+    color: white;
+    padding: 20px
+}
+
+.s1 {color: orange;}

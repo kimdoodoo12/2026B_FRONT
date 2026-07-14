@@ -24,10 +24,10 @@ const object3 = {prop1: 1, prop2: [1, 2, 3], prop3: {age: 40}, prop4: function()
 console.log(object3.prop3.age) // 40
 console.log('prop1' in object3) // true
 
-let students = [{name: '', major: '', students_number: '', grade: ''}, ]
-let subject = [{subject_name: '', major:'', code: '', category: '', grade: '', credit: '', professor: ''}, ] 
-let info_major = [{major: '', Department: '', phone_number: '', captain: '',}, ]
-let history = [{id:'', students_number: '', students_name: '', code: '', subject_name: ''}, ]
+const students = [{name: '', major: '', students_number: '', grade: ''}, ]
+const subject = [{subject_name: '', major:'', code: '', category: '', grade: '', credit: '', professor: ''}, ] 
+const info_major = [{major: '', Department: '', phone_number: '', captain: '',}, ]
+const history = [{id:'', students_number: '', students_name: '', code: '', subject_name: ''}, ]
 
 
 students.push({name: "박현민", major: "정보통신공학과", students_number: '2021123', year:'4'})

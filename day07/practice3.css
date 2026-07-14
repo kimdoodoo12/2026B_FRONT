@@ -1,0 +1,33 @@
+.login_window{
+    margin: 10% auto;
+    width: 50%;
+    text-align: center;
+    box-shadow: 1px 7px 10px palevioletred;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login_text{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.id, .password{
+    width: 70%;
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.login_button{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px; margin: 10px;
+    border-radius: 10px;
+}
+
+.signup {
+    margin: 20px;
+}
