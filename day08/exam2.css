@@ -1,0 +1,66 @@
+/* display: flex */
+*{border: 1px solid red;}
+.box {
+    width: 100px;
+}
+
+.flexbox1{
+    display: flex; /* 하위요소들을 배치하는 방법 */
+    width: 250px;
+    /* 하위요소들의 크기가 구역보다 커지면 하위요소 자동크기 조정*/
+    flex-wrap: nowrap;
+}
+
+.flexbox2{
+    display: flex;
+    width: 250px;
+    /* 하위 요소들의 크기가 구역보다 커지면 자동 줄바꿈 */
+    flex-wrap: wrap;
+}
+
+.flexbox3 {
+    display: flex;
+    flex-direction: row; /* 하위요소들 가로배치 row가 기본값 */
+}
+
+.flexbox4{
+    display: flex;
+    flex-direction: column;
+}
+
+.flexbox5{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flexbox6{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flexbox7{
+    display: flex;
+    justify-content: center;
+}
+
+.flexbox8{
+    display: flex;
+    justify-content: space-between; /* 사이여백 균등 정렬 */
+}
+
+.flexbox9{
+    display: flex;
+    justify-content: space-evenly; /* 양쪽/사이 여백 균등 정렬 */
+}
+
+.flexbox10{
+    display: flex;
+    gap: 20px; /* 사이 여백 직접 설정 */
+}
+
+.flexbox11{
+    display: flex;
+    width: 250px;
+    flex-wrap: wrap;
+    gap: 10px 20px; /* 사이 여백 직접 설정: 세로여백, 가로여백 */
+}

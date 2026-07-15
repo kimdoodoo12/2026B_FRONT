@@ -1,0 +1,30 @@
+*{background-color:lightpink; text-align: center;}
+
+.title{
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.sinnosuke{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.button1{
+    background-color:aquamarine;
+    font-size: 20px;
+    padding: 8px;
+    margin: 3px;
+    border-radius: 10px;
+}
