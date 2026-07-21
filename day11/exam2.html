@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='main.css'>
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title"></h1>
+    
+    <input id="usernameInput">
+    <button id="submitBtn" onclick="submit()">확인</button>
+    <p id="greeting"></p>
+
+    <div id="colorBox">안녕하세요</div>
+    <button id="styleBtn" onclick="styleBtn()">변경</button>
+
+    <button id="themeBtn" onclick="themeBtn()">테마변경</button>
+
+    <div id="targetbox">타겟</div>
+    <button id="removeBtn" onclick="removeBtn()">제거</button>
+    
+    <p class="item">요소1</p>
+    <p class="item">요소2</p>
+    <p class="item">요소3</p>
+    
+    <button onclick="changeImgBtn()" id="changeImgBtn">이미지 변경</button>
+    <img src="../day10/img/img/bg.jpg" id="img1">
+
+    <select class="selectFruit" onchange="selectFruit()">
+        <option>바나나</option>
+        <option>사과</option>
+        <option>포도</option>
+    </select>
+    <script src="exam2.js"></script>
+</body>
+</html>
+

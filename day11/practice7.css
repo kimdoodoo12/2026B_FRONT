@@ -1,0 +1,54 @@
+/* *{
+    border: 1px solid red;
+} */
+.gray{
+    border: 1px solid gray;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-menu {
+    width: 250px;
+}
+
+.theBaking {
+    background-color: aquamarine;
+    padding: 10px;
+    color: white;
+}
+
+.search {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+li {
+    list-style-type: none;
+}
+
+
+
+.main-content{
+    width: 40%;
+    margin: 20px;
+}
+.notification{
+    margin-bottom: 40px
+}
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.breadClass{
+    display: flex;
+    flex-wrap: wrap;
+}
