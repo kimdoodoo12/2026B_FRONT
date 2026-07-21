@@ -3,11 +3,48 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Page Title</title>
+    <title>The 베이킹</title>
     <link rel='stylesheet' href='practice7.css'>
 </head>
 <body>
-    <div class="main">
+        <div id="header">
+
+    <!-- 왼쪽 로고 -->
+            <div class="left-head">
+            <a href="#">
+            <span class="the">The</span>
+            <span class="baking">베이킹</span>
+        </a>
+    </div>
+
+    <!-- 오른쪽 영역 -->
+    <div class="right-head">
+
+        <!-- 로그인 정보 -->
+        <div class="top-menu">
+            <span>김지영(jyKim)님</span>
+            <span>|</span>
+            <a href="#">로그아웃</a>
+            <span>|</span>
+            <a href="#">정보수정</a>
+        </div>
+
+        <!-- 메인 메뉴 -->
+        <ol class="main-menu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">출석부</a></li>
+            <li><a href="#">작품갤러리</a></li>
+            <li><a href="#">게시판</a></li>
+        </ol>
+
+    </div>
+</div>
+    <div id = "main">
+        <img src="img/main_bg.png">
+    </div>
+
+
+      <div class="main">
 
         <div class="left-menu">
             <div class="theBaking">
@@ -97,22 +134,22 @@
             <h4>제빵 클래스</h4>
             <hr class="gray">
             <div class="breadClass">
-                <div  >
+                <div class="breadClass2">
                     <img src="./img/bread1.png">
                     <p>도너츠 만들기 [3]</p>
                     <p>24.11.18</p>
                 </div>
-                <div>
+                <div class="breadClass2">
                     <img src="./img/bread2.png">
                     <p>도너츠 만들기 [3]</p>
                     <p>24.11.18</p>
                 </div>
-                <div>
+                <div class="breadClass2">
                     <img src="./img/bread3.png">
                     <p>도너츠 만들기 [3]</p>
                     <p>24.11.18</p>
                 </div>
-                <div>
+                <div class="breadClass2">
                     <img src="./img/bread4.png">
                     <p>도너츠 만들기 [3]</p>
                     <p>24.11.18</p>
@@ -121,5 +158,54 @@
         </div>
     </div>
     <script src="practice7.js"></script>
+
+
+<!-- ============================== -->
+<div id="footer">
+
+        <div class="footer-inner">
+
+            <ol class="top-foot">
+                <li><a href="#">The베이킹 소개</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">저작권 소개</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ol>
+
+            <div class="footer-info">
+
+                <div class="left-foot">
+                    <h3>문의전화</h3>
+                    <ul>
+                        <li>123-1234</li>
+                        <li>10:00~18:00</li>
+                        <li>(Lunch 12:00~13:00)</li>
+                    </ul>
+                </div>
+
+                <div class="middle-foot">
+                    <h3>The베이킹</h3>
+                    <ul>
+                        <li>주소 : 인천광역시 부평구 부평역 123-1234</li>
+                        <li>전화 : 031-123-1234</li>
+                        <li>팩스 : 031-123-1234</li>
+                        <li>이메일 : abc@abc.com</li>
+                    </ul>
+                </div>
+
+                <div class="right-foot">
+                    <h3>입금정보</h3>
+                    <ul>
+                        <li>농협 123-123-123456</li>
+                        <li>The베이킹</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
