@@ -7,7 +7,6 @@
 
 .main{
     display: flex;
-    justify-content: space-between;
 }
 input {
     border-radius: 10px;
@@ -40,8 +39,8 @@ li {
 
 
 .main-content{
-    width: 40%;
     margin: 20px;
+    width: 400px
 }
 .notification{
     margin-bottom: 40px
@@ -52,6 +51,7 @@ li {
 }
 
 .breadClass{
+    
     display: flex;
     flex-wrap: wrap;
 }

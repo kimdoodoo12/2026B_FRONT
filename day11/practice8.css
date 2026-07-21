@@ -1,0 +1,143 @@
+.theStudio{
+    color: blue;
+}
+
+.top-menu{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    margin: 4px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.mainImgBox{
+    display: flex;
+    justify-content: center;
+}
+.mainImgBox > .mainImg{
+    width: 70%;
+}
+
+#main{
+    width: 100%;
+}
+
+
+.icon-box{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.icon{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.icon img{
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+}
+
+.icon h4{
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.icon p{
+    font-size: 10px;
+}
+
+.photo-box{
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.photo{
+    width: 130px;
+    margin: 0 8px;
+}
+
+.photo img{
+    width: 130px;
+    height: 85px;
+    display: block;
+}
+
+.photo h4{
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.photo p{
+    font-size: 9px;
+}
+
+
+
+#footer {
+    width: 100%;
+    margin-top: 50px;
+    padding: 35px 0;
+    background-color: #333;
+    color: #cccccc;
+}
+
+.footer-inner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 왼쪽(회사 정보) */
+.footer-left h2 {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 22px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* 저작권 */
+.copyright {
+    margin-top: 15px;
+    color: #888888;
+    font-size: 12px;
+}
+
+/* SNS 이미지 전체 영역 */
+.sns {
+    display: flex;
+    align-items: center;
+    gap : 15px
+}
+
+/* SNS 링크 영역 */
+.sns a {
+    text-decoration: none;
+    width: 40px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+/* SNS 이미지 크기 */
+.sns img {
+    width: 200%;
+    height: 40px;
+    display: block;
+}
