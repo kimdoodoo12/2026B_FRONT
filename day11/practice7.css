@@ -9,6 +9,9 @@
     display: flex;
     justify-content: space-between;
 }
+input {
+    border-radius: 10px;
+}
 
 .left-menu {
     width: 250px;
