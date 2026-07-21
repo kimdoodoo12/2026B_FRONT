@@ -27,12 +27,9 @@ for(i in members){
         console.log("존재하는 아이디입니다")
         break
     }
-    // 그 외에는 입력받은 정보들을 모두 members 구조체에 push하고 반복문 탈출
-    else{
-        members.push({user_id, user_password, user_name})
-        break
-    }
 }
+// 그 외에는 입력받은 정보들을 모두 members 구조체에 push
+members.push({user_id, user_password, user_name})
 
 console.log(members)
 
@@ -66,6 +63,11 @@ const products = [
 
 // find함수를 통해 id가 2인 item 콘솔 출력
 console.log(products.find(item => item.id == 2))
+
+for (i in products){
+    if(products[i].id == 2) {console.log(products[i]); break;}
+    else {console.log("존재하지 않습니다"); break;}
+}
 
 
 // users 구조체 배열 선언과 activeUsers 선언
