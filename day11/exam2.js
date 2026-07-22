@@ -80,3 +80,8 @@ function selectFruit(){
 
 
 /* 예제 9 : input 에서 입력받은 값을 전역 배열에 저장하고 배열 상태를 출력하기. */
+let array = []
+function saveInput(){
+    temp = document.querySelector('saveInput').innerHTML
+    array.push(temp)
+}
