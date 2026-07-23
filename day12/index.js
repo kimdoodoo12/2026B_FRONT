@@ -15,20 +15,23 @@ let memberList=[
 	{mcode:3, mname:'박도윤',mposition:'팀장',mimg:'https://placehold.co/100x100',pcode:2},					
 	{mcode:4, mname:'유재석',mposition:'대리',mimg:'https://placehold.co/100x100',pcode:0}					
 ]					
+let finalpcode = 2
+let finalvcode=vacationList.length
 
+//부서관리
+showPart( )
 function showMember() {
     
     let html = ''
     // pcode에 맞는 pname 찾기
     // pcode는 partList에 있음
 
-    for (let index = 0; index < memberList.length; index++){
+    for (let index = 0; index <= memberList.length-1; index++){
 
         // pcode에 맞는 pname을 찾고, pname에 선언
         let temp = memberList[index].pcode
-    
         result = partList.find(item => item.pcode == temp)
-
+        console.log(result.pname)
 
         html += `
             <tr>
@@ -91,16 +94,152 @@ function memberDelete(mcode){
 
 let memberCode = memberList[memberList.length-1].mcode
 function memberAdd(){
-    
     memberCode += 1
+
+    let result = 0
+    
     let memberName = document.querySelector('.memberName').value
     let memberPosition = document.querySelector('.memberPosition').value
     let memberPart = document.querySelector('.memberPart').value
     let memberImage = document.querySelector('.memberImg').files[0]
 
+        // pcode에 맞는 pname을 찾고, pname에 선언
+    for (let index = 0; index <= memberList.length-1; index++){
+        let temp = memberPart
+        result = partList.find(item => item.pname == temp)
+        break;
+    }
     
-    let object = {mcode: memberCode, mname: memberName, mposition:memberPosition, mimg: memberImage == undefined ? 'https://placehold.co/100' : URL.createObjectURL(image),pcode:0}
-    console.log(memberCode)	
+    let object = {mcode: memberCode, mname: memberName,
+        mposition:memberPosition, mimg: memberImage == undefined ? 'https://placehold.co/100' : URL.createObjectURL(image),
+        pcode: result.pcode}
+    console.log(memberPart)	
     memberList.push(object)
     showMember();
+}
+
+// 부서 추가
+function partAdd( ) {
+    let name = document.querySelector('.name').value
+    let object = {pcode : finalpcode+1, pname : name}
+    partList.push(object); finalpcode++;
+
+
+    showPart( )
+}
+
+// 부서 렌더링
+function showPart( ) {
+    let tbody = document.querySelector('.col-left .card table tbody')
+    let partSelect = document.querySelector('.memberPart')
+    let partHtml = ''
+    let selectPartHtml = '<option disabled selected hidden>부서를 선택하세요</option>'
+
+    if(partList.length == 0) tbody.innerHTML = html
+    for( let index = 0; index <= partList.length-1; index++ ){
+        let part = partList[index]
+        partHtml += `
+        <tr>
+            <td> ${ part.pname } </td>
+            <td class="action-links align-right">
+                <a href="#" class="link-edit" onclick="partUpdate(${ part.pcode })">수정</a>
+                <a href="#" class="link-delete" onclick="partDelete(${ part.pcode })">삭제</a>
+            </td>
+        </tr>`
+    }
+    tbody.innerHTML = partHtml
+
+
+    // 부서추가에 따른 부서 select 반영
+    for (let index = 0; index <= partList.length-1; index++){
+        selectPartHtml += `<option>${partList[index].pname}</option>`
+    }
+
+    partSelect.innerHTML = selectPartHtml
+}
+
+// 부서 삭제
+function partDelete( pcode ) {
+    for( let index = 0; index < partList.length; index++){
+        if( partList[index].pcode == pcode ){
+            partList.splice( index, 1 )
+            alert('삭제 성공')
+            showPart( ); return
+        }
+    }
+}
+// 부서 수정
+function partUpdate( pcode ) {
+    for( let index = 0; index < partList.length; index++){
+        if( partList[index].pcode == pcode ) {
+            let newPname = prompt('새로운 부서명을 입력해주세요.')
+            partList[index].pname = newPname 
+            showPart( ); return;
+        }
+    }
+}
+
+
+//휴가
+showVaction()
+
+//휴가신청 출력
+function showVaction(){
+    let html=''
+    let name=''
+    for(let i=0; i<=vacationList.length-1; i++){
+        for(let j=0; j<=memberList.length-1; j++){
+            if(vacationList[i].mcode==memberList[j].mcode){
+                name=memberList[j].mname
+                break
+            }
+        }
+        html+=`<div class="vacation-card">
+                <div class="user-name">${name}</div>
+                <div class="date">${vacationList[i].vstart}~${vacationList[i].vend}</div>
+                <div class="reason">${vacationList[i].vreason}</div>
+                <button onclick="vacationDelete(${vacationList[i].vcode})" type="button" class="btn-cancel">신청취소</button>
+            </div>`
+    }
+    document.querySelector('.vacation_sub').innerHTML=html
+}
+
+//휴가신청
+function vacationAdd(){
+    //휴가사원 이름 가져오기
+    let member = document.querySelector('.member_select').value
+    let mcode =null
+    //휴가사원의 사원코드 찾아오기
+    for(let i=0; i<=memberList.length-1; i++){
+        if(member == memberList[i].mname){
+            mcode = memberList[i].mcode
+            break
+        }
+    }
+    let vcode = finalvcode + 1
+    //휴가시작-끝 날짜 가져오기
+    let vstart = document.querySelector('.vacation_start').value
+    let vend = document.querySelector('.vacation_end').value
+    //휴가사유 가져오기
+    let vreason = document.querySelector('.vacation_reason').value
+    //vationList 에 추가
+    let vacationSub={mcode,vcode,vstart,vend,vreason}
+    vacationList.push(vacationSub)
+    //출력
+    showVaction()
+
+}
+
+
+//휴가신청 취소
+function vacationDelete(vcode){
+    //휴가사원의 사원코드 찾아오기
+    for(let i=0; i<=vacationList.length-1; i++){
+        if(vcode == vacationList[i].vcode){
+            vacationList.splice( i , 1 );
+            alert('신청취소됨.');
+        }
+    }
+    //출력
+    showVaction()
 }
