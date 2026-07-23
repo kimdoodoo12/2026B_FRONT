@@ -103,12 +103,10 @@ function memberAdd(){
     let memberPart = document.querySelector('.memberPart').value
     let memberImage = document.querySelector('.memberImg').files[0]
 
-        // pcode에 맞는 pname을 찾고, pname에 선언
-    for (let index = 0; index <= memberList.length-1; index++){
-        let temp = memberPart
-        result = partList.find(item => item.pname == temp)
-        break;
-    }
+    // pcode에 맞는 pname을 찾고, pname을 선언
+    let temp = memberPart
+    result = partList.find(item => item.pname == temp)
+
     
     let object = {mcode: memberCode, mname: memberName,
         mposition:memberPosition, mimg: memberImage == undefined ? 'https://placehold.co/100' : URL.createObjectURL(image),
